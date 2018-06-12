@@ -27,9 +27,9 @@ class Song < ActiveRecord::Base
     self.notes ? self.note.content : nil
   end
 
-  def note_ids=(ids)
-    ids.each do |id|
-      note = Note.find(id)
+  def note_contents=(notes)
+    notes.each do |note|
+      note = Note.find(note)
       self.notes << note
     end
   end
