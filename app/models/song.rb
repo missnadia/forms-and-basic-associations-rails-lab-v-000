@@ -29,7 +29,7 @@ class Song < ActiveRecord::Base
 
   def note_contents=(notes)
     notes.each do |content|
-      self.notes.map(:content)
+      self.notes.create(content: content)
     end
   end
 end
